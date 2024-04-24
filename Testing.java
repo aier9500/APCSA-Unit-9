@@ -1,7 +1,6 @@
 /** 
  * What I learnt: 
- *  a is least feature rich
- *  b is constructed with Subclass but can only access Superclass
+ *  b will use overridden code from Subclass but can't access public classes from Subclass that is specific to itself
  *  c has access to both Superclass and Subclass
  */
 
@@ -14,7 +13,7 @@ public class Testing {
         Superclass b = new Subclass("Hi", 0, 0); 
         b.method1();
         Subclass c = new Subclass("Hi", 0, 0); 
-        c.method3(); 
+        c.method1(); 
     }
 }
 
@@ -49,12 +48,12 @@ class Subclass extends Superclass {
         System.out.println("Subclass is called");
     }
 
-    public void method3() {
+    public void method1() {
         
         System.out.println("This is method 3");
     }
 
-    private void method4() {
+    private void method2() {
 
         System.out.println("This is method 4");
     }
